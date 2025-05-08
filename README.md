@@ -26,7 +26,7 @@ MariaDB 기반 SQL 실습을 위한 예제 테이블 생성, 더미 데이터 �
 ## 🙋 작성자
 - GitHub: [R7-Cristiano](https://github.com/R7-Cristiano)
 
-## 📘 테이블 정의서 (MariaDB 기준)
+## 📘 테이블 정의서 
 
 1. grades – 고객 등급 정보
 | 컬럼명            | 타입           | 제약조건     | 설명      |
