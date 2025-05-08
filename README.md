@@ -25,41 +25,50 @@ MariaDB 기반 SQL 실습을 위한 예제 테이블 생성, 더미 데이터 �
 
 ## 🙋 작성자
 - GitHub: [R7-Cristiano](https://github.com/R7-Cristiano)
-- 학습용 저장소입니다. 피드백 환영합니다!
 
 ## 📘 테이블 정의서 (MariaDB 기준)
 
 1. grades – 고객 등급 정보
-컬럼명	타입	제약조건	설명
-grade_id	INT	PK	등급 ID
-grade_name	VARCHAR(20)	NOT NULL	등급명
-discount_rate	DECIMAL(5,2)		할인율 (%)
+| 컬럼명            | 타입           | 제약조건     | 설명      |
+| -------------- | ------------ | -------- | ------- |
+| grade\_id      | INT          | PK       | 등급 ID   |
+| grade\_name    | VARCHAR(20)  | NOT NULL | 등급명     |
+| discount\_rate | DECIMAL(5,2) |          | 할인율 (%) |
+
 
 2. customers – 고객 정보
-컬럼명	타입	제약조건	설명
-customer_id	INT	PK	고객 ID
-name	VARCHAR(50)	NOT NULL	고객 이름
-gender	CHAR(1)	CHECK ('M','F') 가능	성별
-age	INT		나이
-grade_id	INT	FK → grades(grade_id)	고객 등급 ID
+| 컬럼명          | 타입          | 제약조건                   | 설명       |
+| ------------ | ----------- | ---------------------- | -------- |
+| customer\_id | INT         | PK                     | 고객 ID    |
+| name         | VARCHAR(50) | NOT NULL               | 고객 이름    |
+| gender       | CHAR(1)     | CHECK ('M','F') 가능     | 성별       |
+| age          | INT         |                        | 나이       |
+| grade\_id    | INT         | FK → grades(grade\_id) | 고객 등급 ID |
+
 
 3. products – 상품 정보
-컬럼명	타입	제약조건	설명
-product_id	INT	PK	상품 ID
-name	VARCHAR(50)	NOT NULL	상품명
-category	VARCHAR(20)		카테고리
-price	DECIMAL(10,2)	NOT NULL	단가
+| 컬럼명         | 타입            | 제약조건     | 설명    |
+| ----------- | ------------- | -------- | ----- |
+| product\_id | INT           | PK       | 상품 ID |
+| name        | VARCHAR(50)   | NOT NULL | 상품명   |
+| category    | VARCHAR(20)   |          | 카테고리  |
+| price       | DECIMAL(10,2) | NOT NULL | 단가    |
+
 
 4. orders – 주문 정보
-컬럼명	타입	제약조건	설명
-order_id	INT	PK	주문 ID
-customer_id	INT	FK → customers(customer_id)	주문 고객 ID
-order_date	DATE	NOT NULL	주문 날짜
-order_amount	DECIMAL(10,2)		주문 총액
+| 컬럼명           | 타입            | 제약조건                         | 설명       |
+| ------------- | ------------- | ---------------------------- | -------- |
+| order\_id     | INT           | PK                           | 주문 ID    |
+| customer\_id  | INT           | FK → customers(customer\_id) | 주문 고객 ID |
+| order\_date   | DATE          | NOT NULL                     | 주문 날짜    |
+| order\_amount | DECIMAL(10,2) |                              | 주문 총액    |
+
 
 5. order_items – 주문 상세
-컬럼명	타입	제약조건	설명
-order_item_id	INT	PK	주문 상세 ID
-order_id	INT	FK → orders(order_id)	주문 ID
-product_id	INT	FK → products(product_id)	상품 ID
-quantity	INT	NOT NULL	주문 수량
+| 컬럼명             | 타입  | 제약조건                       | 설명       |
+| --------------- | --- | -------------------------- | -------- |
+| order\_item\_id | INT | PK                         | 주문 상세 ID |
+| order\_id       | INT | FK → orders(order\_id)     | 주문 ID    |
+| product\_id     | INT | FK → products(product\_id) | 상품 ID    |
+| quantity        | INT | NOT NULL                   | 주문 수량    |
+
